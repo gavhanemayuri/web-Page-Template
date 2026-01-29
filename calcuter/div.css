@@ -1,0 +1,43 @@
+body {
+    background-color: #f0f2f5; /* Light grey/blue background */
+}
+
+#calculator {
+    /* Unique Background and Border */
+    background-color: #343a40; /* Dark background for the calculator body */
+    border: 5px solid #ffc107; /* Yellow border for contrast */
+    max-width: 400px;
+}
+
+#display {
+    /* Style the display screen */
+    background-color: #e9ecef;
+    color: #212529;
+    height: 60px;
+    border: none;
+    font-weight: bold;
+}
+
+/* Custom button styles */
+.btn-dark {
+    /* Number buttons */
+    background-color: #6c757d; /* Muted grey */
+    border-color: #6c757d;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.btn-warning {
+    /* Operator buttons */
+    background-color: #ffc107; /* Yellow */
+    border-color: #ffc107;
+    color: #212529;
+    font-weight: bold;
+}
+
+.btn-primary {
+    /* Equals button */
+    background-color: #0d6efd; /* Blue */
+    border-color: #0d6efd;
+    font-size: 1.5rem;
+}
