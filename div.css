@@ -1,0 +1,33 @@
+div{
+    height: 350px;
+    width: 200px;
+    /* background-color: aqua; */
+    border-style: groove;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+    
+
+}
+section{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    
+
+}
+img{
+    border-style:groove;
+    border-color: black;
+    border-top-left-radius: 30px;
+    /* border-bottom-right-radius: 30px; */
+
+}
+img :hover{
+    
+}
+
+

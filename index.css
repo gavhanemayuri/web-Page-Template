@@ -1,0 +1,28 @@
+          /*  ID Selector */  
+ #p1{
+    color: aqua;
+}
+
+p{
+    color: blueviolet;
+}
+/*tag name selector*/
+p{
+    color: cyan;
+}
+   /*class Selector*/
+.h1{
+    color: aquamarine;
+}
+/*tagname selector*/
+h2{
+    background-color: chocolate;
+}
+ /*Grouping selector*/
+ #p1,.h1,p{
+    font-style: italic
+ }
+ /*univercity selector*/
+ #p1,.h1,p{
+    background: linear-gradient(pink,purple);
+ }
