@@ -1,0 +1,38 @@
+#p22{
+    color: rgb(128, 63, 189);
+    text-indent: 100px;
+    text-decoration-color: chartreuse;
+    text-decoration: overline;
+    text-transform: capitalize;
+    text-decoration-style: wavy;
+}
+h1{
+    text-align: center;
+    text-shadow: 10px 10px 5px;
+}
+
+#p11{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 60px;
+}
+#p22{
+    background-color: aquamarine;
+}
+/* section{
+    background: url("https://static.vecteezy.com/system/resources/thumbnails/028/246/994/small/baby-deer-walking-with-the-mother-in-the-wood-in-the-style-of-realistic-landscapes-generative-ai-photo.jpg");
+    height: 100vh;
+    width: 100%;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: none;
+    #h1{
+        text
+
+    } */
+}
