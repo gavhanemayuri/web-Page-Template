@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Program</title>
+    <script type="text/javascript">
+        // Displaying the alert message
+        alert("Exams are near, have you started preparing for?");
+
+        // Accepting two numbers from the user using prompt
+        var number1 = prompt("Enter the first number:");
+        var number2 = prompt("Enter the second number:");
+
+        // Convert the input strings to numbers
+        number1 = parseFloat(number1);
+        number2 = parseFloat(number2);
+
+        // Confirming the user's input
+        var confirmation = confirm("You entered " + number1 + " and " + number2 + ". Do you want to proceed with the addition?");
+
+        // If the user confirms, add the numbers and show the result
+        if (confirmation) {
+            var sum = number1 + number2;
+            alert("The sum of the two numbers is: " + sum);
+        } else {
+            alert("You cancelled the addition operation.");
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Example</h1>
+    <p>Check the alert and prompt boxes for interaction.</p>
+</body>
+</html>
