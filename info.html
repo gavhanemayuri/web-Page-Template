@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <style>
+        div {
+        height: 1500px;
+            border: 12px;
+            background-color: aquamarine;
+            background-image: url(https://img.pikbest.com/backgrounds/20241216/soft-blurred-pastel-background-with-glowing-bokeh-lights_11261034.jpg!f305cw);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #p11{
+            height: 40px;
+            color: black;
+            text-transform: capitalize;
+            text-align: center;
+            border-style:groove;
+            border-color:rgb(43, 2, 81);
+            text-align: center;
+            border-radius: 30px;
+            border-top-left-radius: 10px;
+           border-bottom-right-radius: 10px;
+           background-color: antiquewhite;
+           font-size: 30px;
+           font-weight: bold;
+           
+        }
+    #formButton{
+        display:block;
+        text-align: center;
+        background-color: rgb(212, 25, 140);
+        border-radius: 20px;
+        font-size: 20px;
+        margin: auto;
+        font-weight: bold;
+    }
+    #form1{
+        padding: 20px;
+        height: 500px;
+        width: 500px;
+        border-radius: 15px;
+        display: none;
+        border-style: groove;
+        text-align: center;
+        background-color: aqua;
+        background-image: url(https://wallpapers.com/images/hd/high-resolution-blue-background-2559-x-1567-0crrdgy81z5uiujw.jpg); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 20px;
+        margin: 5px;
+        border: 10px;
+        border-radius: 10px;
+        color:  whitesmoke;
+        margin: auto;
+    }
+    input[type="submit"]{
+        background-color: white;
+        border-radius: 10px;
+        border-style: groove;
+        font-style: inherit;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    #formButton2{
+        display:block;
+        text-align: center;
+        background-color: rgb(66, 179, 227);
+        border-radius: 15px;
+        font-size: large;
+        margin: auto;
+        font-weight: bold;
+    }
+#form2{
+    padding: 20px;
+        height: 400px;
+        width: 500px;
+        border-radius: 15px;
+        display: none;
+        border-style: groove;
+        text-align: center;
+        background-color: aqua;
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHs237bT1gbxkUrwkNY3GuN9O7-BTdsaY7kPp7hqsJs_wJNo4S8EgRzfe0bWloc-KT6w&usqp=CAU); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 20px;
+        margin: 10px;
+        border: 10px;
+        border-radius: 10px;
+        color:  white;
+        margin: auto;
+}
+ #form2 input[type="submit"]{
+    background-color:rgb(30, 183, 244);
+        border-radius: 15px;
+        border-style: groove;
+        font-style:normal;
+        font-size: 20px;
+        font-weight: bold;
+}
+#Submit{
+    
+        display: block;
+        text-align: center;
+        background-color: rgb(186, 193, 209);
+        border-radius: 1px;
+        color: azure;
+        background-color: rgb(2, 14, 14);
+        border: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        margin: auto;
+}
+            
+    </style>
+
+
+<div>
+    <p id="p11">Emplyoee Information</p>
+    <br><br>
+
+    <button type="button" id="formButton" >Personal Information</button>
+   <br><br>
+    <form id="form1">
+        <legend>Personal Information</legend>
+        <br><br>
+
+       <b>First Name:</b><input type="text" name="First Name">
+       <br><br>
+       <b>Last Name:</b><input type="text" name="Last Name">
+       <br><br>
+       <label for="mail">Mail ID:</label>
+       <input type="email" name="" id="">
+       <br><br>
+       <label for="pass">Password:</label>
+       <input type="password" name="" id="">
+       <br><br>
+       <label for="contact">Contact:</label>
+       <input type="tel" name="" id="">
+       <br><br>
+       <label for="DOB">DOB:</label>
+       <input type="date" name="" id="">
+       <br><br>
+       <label for="Gender">Gender:</label>
+       <input type="radio" name="Gender" id="Gender1" value="Male">Male
+       <input type="radio" name="Gender" id="Gender1" value="Female">Female
+       <br><br>
+       <input type="submit" value="Submit">
+
+    </form>
+    <br><br>
+
+     <button type="button" id="formButton2" >Education Details</button>
+     <br><br>
+     <form id="form2">
+        <legend>Education details</legend>
+        <br><br>
+       <label for="School Name">School Name SSC:</label>
+       <input type="text" name="" id="">
+       <br><br>
+       <label for="Passing Year">Passing Year:</label>
+       <input type=""name="" id="">
+       <br><br>
+       <label for="Upload Marksheet">Upload Marksheet:</label>
+       <input type="file" id="">
+       <br><br>
+       <label for="College Name">College Name HSC:</label>
+       <input type="text" name="" id="">
+       <br><br>
+       <label for="Passing Year">Passing Year:</label>
+       <input type=""name="" id="">
+       <br><br>
+       <label for="Upload Marksheet">Upload Marksheet:</label>
+       <input type="file" id="">
+       <br><br>
+       <input type="submit" value="Submit">
+     </form>
+     <br><br>
+
+    <button type="button" id="Submit">Submit</button>
+
+</div>
+    <script src="./info.js"></script>
+</body>
+</html>
