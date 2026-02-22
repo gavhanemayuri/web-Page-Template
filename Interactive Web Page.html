@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interactivity</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #message {
+            display: none;
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+        }
+
+        #counter {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Interactive Web Page</h1>
+
+    <button onclick="changeColor()">Change Background</button>
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="increaseCounter()">Increase Counter</button>
+
+    <div id="message">Hello! You clicked the button 🎉</div>
+
+    <div id="counter">Counter: 0</div>
+
+    <script>
+        let count = 0;
+
+        function changeColor() {
+            document.body.style.backgroundColor = 
+                "#" + Math.floor(Math.random()*16777215).toString(16);
+        }
+
+        function showMessage() {
+            let msg = document.getElementById("message");
+            if (msg.style.display === "none") {
+                msg.style.display = "block";
+            } else {
+                msg.style.display = "none";
+            }
+        }
+
+        function increaseCounter() {
+            count++;
+            document.getElementById("counter").innerText = "Counter: " + count;
+        }
+    </script>
+
+</body>
+</html>
