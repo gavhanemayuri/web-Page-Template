@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Creative Photo Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<style>
+
+body{
+    background: linear-gradient(to right,#000428,#004e92);
+    color:white;
+    font-family: Arial;
+}
+
+/* Title */
+h1{
+    text-align:center;
+    margin:30px 0;
+}
+
+/* Filter Buttons */
+.filter-btn{
+    margin:5px;
+    border-radius:20px;
+}
+
+/* Image Card */
+.img-box{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.img-box img{
+    width:100%;
+    transition:0.5s;
+}
+
+/* Hover Zoom */
+.img-box:hover img{
+    transform:scale(1.2);
+}
+
+/* Overlay Effect */
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.5s;
+}
+
+.img-box:hover .overlay{
+    opacity:1;
+}
+
+.overlay h4{
+    color:white;
+}
+
+/* Modal */
+.modal-content{
+    background:black;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Creative Photography</h1>
+
+<!-- Filter Buttons -->
+<div class="text-center mb-4">
+    <button class="btn btn-light filter-btn" data-filter="all">All</button>
+    <button class="btn btn-primary filter-btn" data-filter="nature">Nature</button>
+    <button class="btn btn-success filter-btn" data-filter="travel">Travel</button>
+    <button class="btn btn-warning filter-btn" data-filter="city">City</button>
+</div>
+
+
+<div class="row gallery">
+
+    <!-- Nature -->
+    <div class="col-md-4 mb-4 nature">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1015/600/400">
+            <div class="overlay"><h4>Nature</h4></div>
+        </div>
+    </div>
+
+    <!-- Travel -->
+    <div class="col-md-4 mb-4 travel">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1016/600/400">
+            <div class="overlay"><h4>Travel</h4></div>
+        </div>
+    </div>
+
+    <!-- City -->
+    <div class="col-md-4 mb-4 city">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1018/600/400">
+            <div class="overlay"><h4>City</h4></div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4 nature">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1020/600/400">
+            <div class="overlay"><h4>Nature</h4></div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4 travel">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1024/600/400">
+            <div class="overlay"><h4>Travel</h4></div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4 city">
+        <div class="img-box">
+            <img src="https://picsum.photos/id/1027/600/400">
+            <div class="overlay"><h4>City</h4></div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <img id="modalImage" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+// Image Popup
+$(".img-box img").click(function(){
+    $("#modalImage").attr("src", $(this).attr("src"));
+    $("#imageModal").modal("show");
+});
+
+// Filter
+$(".filter-btn").click(function(){
+    var filter = $(this).attr("data-filter");
+
+    if(filter == "all"){
+        $(".gallery div").show(500);
+    }
+    else{
+        $(".gallery div").hide();
+        $("."+filter).show(500);
+    }
+});
+
+</script>
+
+</body>
+</html>
