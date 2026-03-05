@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Best Friend Card - Yoga</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI', sans-serif;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffdde1,#fcb69f);
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
+}
+
+/* Background animation */
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Card */
+.card-box{
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+    padding:45px;
+    border-radius:30px;
+    text-align:center;
+    width:360px;
+    position:relative;
+    animation:rainbowGlow 4s infinite alternate;
+}
+
+/* Rainbow glow */
+@keyframes rainbowGlow{
+    0%{box-shadow:0 0 20px #ff4d6d;}
+    25%{box-shadow:0 0 25px #ff9966;}
+    50%{box-shadow:0 0 25px #cc66ff;}
+    75%{box-shadow:0 0 25px #66ccff;}
+    100%{box-shadow:0 0 30px #33ff99;}
+}
+
+h1{
+    color:#ff3366;
+    font-weight:bold;
+}
+
+.message{
+    font-size:18px;
+    margin-top:15px;
+    color:#333;
+    min-height:60px;
+}
+
+/* Button */
+.btn-love{
+    background:#ff3366;
+    border:none;
+    padding:10px 30px;
+    color:white;
+    border-radius:30px;
+    margin-top:10px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.btn-love:hover{
+    background:#cc0052;
+    transform:scale(1.1);
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    width:300px;
+    text-align:center;
+    transition:0.4s;
+    z-index:10;
+}
+
+.popup.show{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+/* Floating butterflies */
+.butterfly{
+    position:absolute;
+    font-size:22px;
+    animation:flyUp 8s linear infinite;
+}
+
+@keyframes flyUp{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-700px);}
+}
+
+/* Hearts */
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0) rotate(0);}
+    100%{transform:translateY(-600px) rotate(360deg);}
+}
+
+/* Mobile */
+@media(max-width:500px){
+    .card-box{
+        width:90%;
+        padding:30px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card-box">
+    <h1>💖 My Best Friend 💖</h1>
+    <h3 class="text-primary">Yoga</h3>
+
+    <div class="message" id="friendMessage">
+        Click below to see a surprise message!
+    </div>
+
+    <button class="btn-love" onclick="showMessage()">Surprise 🎁</button>
+    <button class="btn-love" onclick="openLetter()">Open Letter 💌</button>
+</div>
+
+<!-- Popup Love Letter -->
+<div class="popup" id="loveLetter">
+    <h4>💌 Dear Yoga</h4>
+    <p>
+        You are my sunshine 🌞<br>
+        My happiness 💕<br>
+        Thank you for being my best friend forever 💖
+    </p>
+    <button class="btn-love" onclick="closeLetter()">Close</button>
+</div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+const messages = [
+    "Yoga, you are my sunshine 🌞",
+    "Life is better with you 💕",
+    "Forever best friends! 💖",
+    "You make my world brighter ✨"
+];
+
+function showMessage(){
+    let randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById("friendMessage").innerHTML = messages[randomIndex];
+    createHearts();
+    document.getElementById("bgMusic").play();
+}
+
+/* Hearts */
+function createHearts(){
+    for(let i=0;i<6;i++){
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+    }
+}
+
+/* Butterflies continuous */
+setInterval(()=>{
+    const butterfly = document.createElement("div");
+    butterfly.classList.add("butterfly");
+    butterfly.innerHTML = "🦋";
+    butterfly.style.left = Math.random() * 100 + "vw";
+    butterfly.style.bottom = "0px";
+    document.body.appendChild(butterfly);
+    setTimeout(()=>butterfly.remove(),8000);
+},2000);
+
+/* Popup */
+function openLetter(){
+    document.getElementById("loveLetter").classList.add("show");
+}
+
+function closeLetter(){
+    document.getElementById("loveLetter").classList.remove("show");
+}
+
+</script>
+
+</body>
+</html>
