@@ -1,0 +1,424 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blood Donation Network</title>
+
+<style>
+
+body{
+font-family:Segoe UI;
+margin:0;
+background:#f5f5f5;
+}
+
+/* HEADER */
+
+header{
+background:#d90429;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:white;
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+padding:10px;
+}
+
+nav button{
+margin:5px;
+padding:10px 18px;
+background:#d90429;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* SECTIONS */
+
+section{
+padding:25px;
+display:none;
+}
+
+.active{
+display:block;
+}
+
+/* CARD */
+
+.card{
+background:white;
+max-width:450px;
+margin:12px auto;
+padding:18px;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* INPUT */
+
+input,select{
+width:90%;
+padding:10px;
+margin:8px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+/* BUTTON */
+
+.btn{
+padding:10px 20px;
+background:#ef233c;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* CHART */
+
+.chartBar{
+height:22px;
+background:#ef233c;
+margin:6px 0;
+color:white;
+text-align:left;
+padding-left:6px;
+}
+
+/* INSTALL BUTTON */
+
+.install{
+position:fixed;
+bottom:20px;
+right:20px;
+background:black;
+color:white;
+padding:12px;
+border-radius:6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🩸 Blood Donation Network</h1>
+<p>Donate Blood • Save Lives</p>
+
+</header>
+
+<nav>
+
+<button onclick="showPage('register')">Register</button>
+<button onclick="showPage('search')">Search</button>
+<button onclick="showPage('request')">Emergency</button>
+<button onclick="showPage('admin')">Admin</button>
+
+</nav>
+
+<!-- REGISTER -->
+
+<section id="register" class="active">
+
+<h2 align="center">Donor Registration</h2>
+
+<div class="card">
+
+<input id="name" placeholder="Full Name">
+<input id="city" placeholder="City">
+
+<select id="blood">
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+</select>
+
+<button class="btn" onclick="getLocation()">Add GPS Location</button>
+<button class="btn" onclick="registerDonor()">Register</button>
+
+</div>
+
+</section>
+
+<!-- SEARCH -->
+
+<section id="search">
+
+<h2 align="center">Search Donor</h2>
+
+<div class="card">
+
+<select id="searchBlood">
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+</select>
+
+<button class="btn" onclick="searchDonor()">Search</button>
+
+</div>
+
+<div id="results"></div>
+
+</section>
+
+<!-- EMERGENCY -->
+
+<section id="request">
+
+<h2 align="center">🚑 Emergency Blood Request</h2>
+
+<div class="card">
+
+<input id="patient" placeholder="Patient Name">
+
+<select id="reqBlood">
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+</select>
+
+<input id="hospital" placeholder="Hospital Name">
+
+<button class="btn" onclick="sendRequest()">Send Request</button>
+
+</div>
+
+<div id="requestList"></div>
+
+</section>
+
+<!-- ADMIN -->
+
+<section id="admin">
+
+<h2 align="center">Admin Dashboard</h2>
+
+<div class="card">
+
+<button class="btn" onclick="loadDonors()">Show All Donors</button>
+
+<div id="donorList"></div>
+
+<h3>Blood Group Chart</h3>
+
+<div id="chart"></div>
+
+</div>
+
+</section>
+
+<button class="install" onclick="installApp()">📱 Install</button>
+
+<script>
+
+/* DATABASE */
+
+let donors = JSON.parse(localStorage.getItem("donors")) || []
+let requests = JSON.parse(localStorage.getItem("requests")) || []
+
+let lat="", lon=""
+
+/* NAVIGATION */
+
+function showPage(id){
+
+document.querySelectorAll("section").forEach(s=>s.classList.remove("active"))
+
+document.getElementById(id).classList.add("active")
+
+}
+
+/* GPS */
+
+function getLocation(){
+
+if(navigator.geolocation){
+
+navigator.geolocation.getCurrentPosition(pos=>{
+
+lat=pos.coords.latitude
+lon=pos.coords.longitude
+
+alert("Location Added")
+
+})
+
+}
+
+}
+
+/* REGISTER */
+
+function registerDonor(){
+
+let name=document.getElementById("name").value
+let city=document.getElementById("city").value
+let blood=document.getElementById("blood").value
+
+if(name=="" || city==""){
+alert("Fill all fields")
+return
+}
+
+let donor={name,city,blood,lat,lon}
+
+donors.push(donor)
+
+localStorage.setItem("donors",JSON.stringify(donors))
+
+alert("Donor Registered")
+
+}
+
+/* SEARCH */
+
+function searchDonor(){
+
+let blood=document.getElementById("searchBlood").value
+
+let results=document.getElementById("results")
+
+results.innerHTML=""
+
+donors.forEach(d=>{
+
+if(d.blood==blood){
+
+results.innerHTML+=`
+
+<div class="card">
+
+<b>${d.name}</b><br>
+City: ${d.city}<br>
+Blood: ${d.blood}<br>
+Location: ${d.lat}, ${d.lon}
+
+</div>
+
+`
+
+}
+
+})
+
+}
+
+/* EMERGENCY */
+
+function sendRequest(){
+
+let patient=document.getElementById("patient").value
+let blood=document.getElementById("reqBlood").value
+let hospital=document.getElementById("hospital").value
+
+let req={patient,blood,hospital}
+
+requests.push(req)
+
+localStorage.setItem("requests",JSON.stringify(requests))
+
+displayRequests()
+
+}
+
+function displayRequests(){
+
+let box=document.getElementById("requestList")
+
+box.innerHTML=""
+
+requests.forEach(r=>{
+
+box.innerHTML+=`
+
+<div class="card">
+
+🚑 ${r.patient}<br>
+Blood Needed: ${r.blood}<br>
+Hospital: ${r.hospital}
+
+</div>
+
+`
+
+})
+
+}
+
+displayRequests()
+
+/* ADMIN */
+
+function loadDonors(){
+
+let list=document.getElementById("donorList")
+let chart=document.getElementById("chart")
+
+list.innerHTML=""
+chart.innerHTML=""
+
+let counts={"A+":0,"B+":0,"O+":0,"AB+":0}
+
+donors.forEach(d=>{
+
+counts[d.blood]++
+
+list.innerHTML+=`
+
+<div class="card">
+
+${d.name} | ${d.blood} | ${d.city}
+
+</div>
+
+`
+
+})
+
+for(let g in counts){
+
+chart.innerHTML+=`
+
+<div>${g}</div>
+<div class="chartBar" style="width:${counts[g]*40}px">${counts[g]}</div>
+
+`
+
+}
+
+}
+
+/* INSTALL */
+
+function installApp(){
+
+alert("Use browser menu → Add to Home Screen to install the app.")
+
+}
+
+</script>
+
+</body>
+</html>
+```
