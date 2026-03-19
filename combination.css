@@ -1,0 +1,9 @@
+div p{
+    color: blueviolet;
+}
+div>p{
+    color: chartreuse;
+}
+div+p{
+    background-color: crimson;
+}
