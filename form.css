@@ -1,0 +1,54 @@
+/* div{
+    border-style:solid;
+    border-color:black;
+    text-decoration:dashed;
+    font-size: 20px;
+    border-radius: 5px; 
+}
+/* input{
+    padding: 12px;
+    margin: 5px; */
+    /* border: 4px ;
+    border-radius: 10px;
+    width: 50%;
+    background-color: lightgray;
+
+} */ 
+/* input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: lightgray;
+
+}
+textarea{
+    background-color:lightgray;
+    width: 50%;
+    height: 50px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: rgb(43, 14, 97);
+    margin: 10px;
+}
+input[type="submit"]{
+    background-color: lightslategray;
+    width: 50%;
+    display: block;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color:white ;
+    margin-top: 30px;
+    padding: 15px;
+    text-align:center;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: indigo;
+}
+form{
+    
+} */
