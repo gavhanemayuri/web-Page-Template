@@ -1,0 +1,28 @@
+img{
+    height: 300px;
+    width: 300px;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+.container{
+    height: 400px;
+    width: 400px;
+    position: relative;
+    /* background-color: aqua; */
+    
+    
+}
+.overlay{
+    position:absolute;
+    top: 0;
+    background-color: blueviolet;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    opacity: 0;
+    
+
+}
+.container:hover .overlay{
+    opacity: 0.9;
+}
