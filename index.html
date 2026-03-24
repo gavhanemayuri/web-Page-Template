@@ -1,23 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GlowUp Studio – Makeover & Beauty</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0,0,0,0.7);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #ff69b4 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    .hero h1 span { color: #ff69b4; }
+
+    /* Services */
+    .service-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Gallery */
+    .gallery img {
+      border-radius: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+
+    /* Pricing */
+    .price {
+      font-size: 2rem;
+      color: #ff69b4;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #aaa;
+    }
+    footer a { color: #ff69b4; text-decoration: none; }
+  </style>
 </head>
 <body>
-    <!-- id selector// -->
-    <p id="p1">hello </p>
-    <p>hello world</p>
-     
-    <!-- Class Selector -->
-    <h1 class="h1">hiii</h1>
-    <h2 class="h1">Hello</h2>
-    <h3 class="h1">Good Morning</h3>
-  
-  <!-- tagname selector -->
-   
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">GlowUp Studio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container text-center">
+    <h1 class="display-4">Redefine Your <span>Beauty</span></h1>
+    <p class="lead mt-3">Professional makeover & styling for every occasion</p>
+    <button class="btn btn-lg btn-pink mt-4" onclick="bookNow()">Book Appointment</button>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="py-5" id="services">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Services</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card service-card text-center p-4">
+          <i class="bi bi-brush fs-1 text-danger"></i>
+          <h5 class="mt-3">Bridal Makeup</h5>
+          <p>Elegant and flawless bridal makeover.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card text-center p-4">
+          <i class="bi bi-scissors fs-1 text-danger"></i>
+          <h5 class="mt-3">Hair Styling</h5>
+          <p>Trendy haircuts & styling by experts.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card service-card text-center p-4">
+          <i class="bi bi-stars fs-1 text-danger"></i>
+          <h5 class="mt-3">Party Look</h5>
+          <p>Perfect glam for parties and events.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="py-5 bg-light" id="gallery">
+  <div class="container">
+    <h2 class="text-center mb-5">Makeover Gallery</h2>
+    <div class="row g-3 gallery">
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" class="img-fluid"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" class="img-fluid"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9" class="img-fluid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-5" id="pricing">
+  <div class="container">
+    <h2 class="text-center mb-5">Pricing Plans</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card text-center p-4">
+          <h5>Basic</h5>
+          <p class="price">₹1999</p>
+          <p>Simple makeup + hair</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center p-4 border-danger">
+          <h5>Premium</h5>
+          <p class="price">₹4999</p>
+          <p>HD makeup + styling</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center p-4">
+          <h5>Bridal</h5>
+          <p class="price">₹9999</p>
+          <p>Complete bridal package</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="py-5 bg-light" id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form onsubmit="submitForm(event)">
+          <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+          <input type="email" class="form-control mb-3" placeholder="Email" required>
+          <textarea class="form-control mb-3" placeholder="Message" rows="4"></textarea>
+          <button class="btn btn-danger w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 text-center">
+  <p>© 2026 GlowUp Studio | Designed with ❤</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function bookNow() {
+    alert("Thank you! Our team will contact you shortly 💄");
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Message sent successfully ✨");
+  }
+</script>
 
 </body>
 </html>

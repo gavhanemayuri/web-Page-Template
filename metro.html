@@ -1,0 +1,111 @@
+<!-- ==============================
+ MULTI-PAGE WEBSITE STRUCTURE
+ Folder: glowup-studio/
+ ├── index.html   (Home)
+ ├── services.html
+ ├── gallery.html
+ ├── contact.html
+ ============================== -->
+
+<!-- ========== index.html (HOME) ========== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowUp Studio | Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{background:#0d0d0d;color:white;font-family:Poppins}
+.navbar{background:black}
+.pink{color:#ff4da6}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.btn-pink{background:#ff4da6;color:white}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand pink" href="index.html">GlowUp</a>
+<div>
+<a class="nav-link d-inline text-white" href="services.html">Services</a>
+<a class="nav-link d-inline text-white" href="gallery.html">Gallery</a>
+<a class="nav-link d-inline text-white" href="contact.html">Contact</a>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div>
+<h1>Luxury <span class="pink">Makeover</span></h1>
+<p>Professional beauty studio</p>
+<a href="contact.html" class="btn btn-pink">Book Now</a>
+</div>
+</section>
+</body>
+</html>
+
+<!-- ========== services.html ========== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowUp | Services</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#111;color:white}.card{background:#1c1c1c}</style>
+</head>
+<body>
+<div class="container py-5">
+<h2 class="text-center text-danger">Our Services</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="card p-4">Bridal Makeup</div></div>
+<div class="col-md-4"><div class="card p-4">Party Makeup</div></div>
+<div class="col-md-4"><div class="card p-4">Hair Styling</div></div>
+</div>
+</div>
+</body>
+</html>
+
+<!-- ========== gallery.html ========== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowUp | Gallery</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:black;color:white}img{border-radius:10px}</style>
+</head>
+<body>
+<div class="container py-5">
+<h2 class="text-center text-danger">Before & After</h2>
+<div class="row g-3">
+<div class="col-md-6"><img class="img-fluid" src="https://images.unsplash.com/photo-1517841905240-472988babdf9"></div>
+<div class="col-md-6"><img class="img-fluid" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"></div>
+</div>
+</div>
+</body>
+</html>
+
+<!-- ========== contact.html ========== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowUp | Contact</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#111;color:white}</style>
+</head>
+<body>
+<div class="container py-5">
+<h2 class="text-center text-danger">Contact Us</h2>
+<div class="col-md-6 mx-auto">
+<input class="form-control mb-2" placeholder="Name">
+<input class="form-control mb-2" placeholder="Email">
+<textarea class="form-control mb-2" placeholder="Message"></textarea>
+<button class="btn btn-danger w-100">Submit</button>
+</div>
+</div>
+</body>
+</html>

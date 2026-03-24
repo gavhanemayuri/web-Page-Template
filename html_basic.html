@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- <!DOCTYPE html> defines that this document is HTML5 -->
+
+<html lang="en">
+<!-- <html> is the root element of an HTML page -->
+
+<head>
+    <!-- <head> contains meta information about the document -->
+
+    <meta charset="UTF-8">
+    <!-- <meta> provides metadata, charset defines character encoding -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes website responsive -->
+
+    <title>HTML All Tags Explained</title>
+    <!-- <title> sets the browser tab title -->
+
+    <style>
+        /* <style> is used to write internal CSS */
+        body { font-family: Arial; }
+    </style>
+
+    <script>
+        // <script> is used to write JavaScript
+        function demo() {
+            alert("Hello HTML");
+        }
+    </script>
+</head>
+
+<body>
+<!-- <body> contains visible content -->
+
+<header>
+    <!-- <header> represents top section -->
+    <h1>HTML Tags Explanation</h1>
+</header>
+
+<nav>
+    <!-- <nav> used for navigation links -->
+    <a href="#">Home</a> |
+    <a href="#">About</a>
+</nav>
+
+<hr>
+<!-- <hr> creates a horizontal line -->
+
+<section>
+    <!-- <section> groups related content -->
+
+    <h2>Text Tags</h2>
+
+    <p>
+        <!-- <p> paragraph tag -->
+        <b>Bold</b> <!-- <b> bold text -->
+        <strong>Strong</strong> <!-- <strong> important text -->
+        <i>Italic</i> <!-- <i> italic text -->
+        <em>Emphasized</em> <!-- <em> emphasized text -->
+        <u>Underline</u> <!-- <u> underlined text -->
+    </p>
+
+    <p>
+        <mark>Marked</mark> <!-- highlighted text -->
+        <small>Small</small> <!-- smaller text -->
+        <del>Deleted</del> <!-- deleted text -->
+        <ins>Inserted</ins> <!-- inserted text -->
+    </p>
+
+    <p>
+        H<sub>2</sub>O <!-- <sub> subscript -->
+        X<sup>2</sup> <!-- <sup> superscript -->
+    </p>
+</section>
+
+<section>
+    <h2>Lists</h2>
+
+    <ul>
+        <!-- <ul> unordered list -->
+        <li>Item 1</li> <!-- <li> list item -->
+        <li>Item 2</li>
+    </ul>
+
+    <ol>
+        <!-- <ol> ordered list -->
+        <li>First</li>
+        <li>Second</li>
+    </ol>
+
+    <dl>
+        <!-- <dl> description list -->
+        <dt>HTML</dt> <!-- <dt> term -->
+        <dd>Markup Language</dd> <!-- <dd> description -->
+    </dl>
+</section>
+
+<section>
+    <h2>Media & Links</h2>
+
+    <a href="https://google.com" target="_blank">
+        <!-- <a> anchor tag -->
+        Google
+    </a><br><br>
+
+    <img src="https://via.placeholder.com/150" alt="Image">
+    <!-- <img> displays image -->
+
+    <audio controls>
+        <!-- <audio> plays audio -->
+        <source src="audio.mp3">
+    </audio>
+
+    <video controls width="200">
+        <!-- <video> plays video -->
+        <source src="video.mp4">
+    </video>
+</section>
+
+<section>
+    <h2>Table</h2>
+
+    <table border="1">
+        <!-- <table> creates table -->
+
+        <caption>Student Data</caption>
+        <!-- <caption> table title -->
+
+        <thead>
+            <!-- <thead> table header -->
+            <tr>
+                <!-- <tr> table row -->
+                <th>Name</th> <!-- <th> header cell -->
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- <tbody> table body -->
+            <tr>
+                <td>Mayuri</td> <!-- <td> data cell -->
+                <td>90</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Form Tags</h2>
+
+    <form>
+        <!-- <form> collects user input -->
+
+        <label>Name:</label>
+        <!-- <label> input label -->
+        <input type="text"><br><br>
+        <!-- <input> user input -->
+
+        <input type="password"><br><br>
+
+        <input type="radio" name="g"> Male
+        <input type="radio" name="g"> Female<br><br>
+
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS<br><br>
+
+        <select>
+            <!-- <select> dropdown -->
+            <option>Pune</option>
+            <option>Mumbai</option>
+        </select><br><br>
+
+        <textarea rows="3" cols="20">
+            <!-- <textarea> multi-line input -->
+        </textarea><br><br>
+
+        <button onclick="demo()">Click</button>
+        <!-- <button> clickable button -->
+    </form>
+</section>
+
+<section>
+    <h2>Semantic Tags</h2>
+
+    <article>
+        <!-- <article> independent content -->
+        Article Content
+    </article>
+
+    <aside>
+        <!-- <aside> side content -->
+        Side Info
+    </aside>
+
+    <figure>
+        <!-- <figure> image container -->
+        <img src="https://via.placeholder.com/100">
+        <figcaption>Image Caption</figcaption>
+        <!-- <figcaption> image text -->
+    </figure>
+</section>
+
+<section>
+    <h2>Other Tags</h2>
+
+    <details>
+        <!-- <details> expandable content -->
+        <summary>More Info</summary>
+        Hidden text
+    </details>
+
+    <progress value="50" max="100"></progress>
+    <!-- <progress> progress bar -->
+
+    <meter value="0.6"></meter>
+    <!-- <meter> measurement -->
+
+    <code>print("Hello")</code>
+    <!-- <code> code text -->
+
+    <pre>
+Line 1
+    Line 2
+    </pre>
+    <!-- <pre> preformatted text -->
+</section>
+
+<footer>
+    <!-- <footer> bottom section -->
+    © 2026 HTML Learning
+</footer>
+
+</body>
+</html>
