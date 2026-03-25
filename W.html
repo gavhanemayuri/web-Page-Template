@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>India Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="w.css">
+    <script src="https://kit.fontawesome.com/a692e1c39f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h2 class="title">🇮🇳 India Weather App</h2>
+
+    <form class="search">
+        <input type="text" placeholder="Enter city (e.g. Pune)" required>
+        <button>Search</button>
+    </form>
+
+    <div class="weather__body">
+        <h1 class="city"></h1>
+        <p class="date"></p>
+
+        <div class="icon"></div>
+
+        <h2 class="temp"></h2>
+        <p class="condition"></p>
+
+        <div class="minmax">
+            <span class="min"></span>
+            <span class="max"></span>
+        </div>
+
+        <!-- ALL WEATHER DETAILS -->
+        <div class="details">
+
+            <div class="card"><i class="fa-solid fa-temperature-full"></i><span class="feels"></span></div>
+            <div class="card"><i class="fa-solid fa-droplet"></i><span class="humidity"></span></div>
+            <div class="card"><i class="fa-solid fa-wind"></i><span class="wind"></span></div>
+            <div class="card"><i class="fa-solid fa-gauge-high"></i><span class="pressure"></span></div>
+            <div class="card"><i class="fa-solid fa-eye"></i><span class="visibility"></span></div>
+            <div class="card"><i class="fa-solid fa-cloud"></i><span class="clouds"></span></div>
+            <div class="card"><i class="fa-solid fa-sun"></i><span class="sunrise"></span></div>
+            <div class="card"><i class="fa-solid fa-moon"></i><span class="sunset"></span></div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="w.js"></script>
+</body>
+</html>
