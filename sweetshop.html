@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#fff5f7;color:#333}
+header{background:#ff4d6d;color:white;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:24px}
+nav a{color:white;margin:0 10px;text-decoration:none;font-weight:500}
+.hero{height:60vh;background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.unsplash.com/photo-1578985545062-69928b1d9587');background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;color:white;text-align:center}
+.hero h2{font-size:40px}
+.container{padding:40px 20px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:white;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);overflow:hidden;transition:0.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-content{padding:15px}
+.card-content h3{margin-bottom:10px}
+.price{color:#ff4d6d;font-weight:bold}
+button{background:#ff4d6d;color:white;border:none;padding:10px 15px;border-radius:8px;cursor:pointer;margin-top:10px}
+button:hover{background:#e63950}
+footer{background:#333;color:white;text-align:center;padding:15px;margin-top:20px}
+@media(max-width:600px){
+.hero h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>🍬 Sweet Shop</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#products">Sweets</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+<section class="hero">
+<h2>Delicious Sweets for Every Occasion</h2>
+</section>
+<section class="container" id="products">
+<h2 style="text-align:center;margin-bottom:20px">Our Specials</h2>
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Gulab Jamun</h3>
+<p class="price">₹150</p>
+<button onclick="order('Gulab Jamun')">Order Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Kaju Katli</h3>
+<p class="price">₹500</p>
+<button onclick="order('Kaju Katli')">Order Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Ladoo</h3>
+<p class="price">₹200</p>
+<button onclick="order('Ladoo')">Order Now</button>
+</div>
+</div>
+
+</div>
+</section>
+<section class="container" id="contact">
+<h2 style="text-align:center;margin-bottom:20px">Contact Us</h2>
+<form onsubmit="submitForm(event)" style="max-width:500px;margin:auto">
+<input type="text" placeholder="Your Name" required style="width:100%;padding:10px;margin:10px 0">
+<input type="email" placeholder="Your Email" required style="width:100%;padding:10px;margin:10px 0">
+<textarea placeholder="Message" required style="width:100%;padding:10px;margin:10px 0"></textarea>
+<button type="submit" style="width:100%">Send</button>
+</form>
+</section>
+<footer>
+<p>© 2026 Sweet Shop | Made with ❤️</p>
+</footer>
+<script>
+function order(item){
+alert(item + ' ordered successfully!');
+}
+function submitForm(e){
+e.preventDefault();
+alert('Message sent successfully!');
+}
+</script>
+</body>
+</html>
